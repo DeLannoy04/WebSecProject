@@ -1,0 +1,84 @@
+{
+  "name": "composer/composer",
+  "type": "library",
+  "description": "Composer helps you declare, manage and install dependencies of PHP projects. It ensures you have the right stack everywhere.",
+  "keywords": [
+    "package",
+    "dependency",
+    "autoload"
+  ],
+  "homepage": "https://getcomposer.org/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nils Adermann",
+      "email": "naderman@naderman.de",
+      "homepage": "https://www.naderman.de"
+    },
+    {
+      "name": "Jordi Boggiano",
+      "email": "j.boggiano@seld.be",
+      "homepage": "https://seld.be"
+    }
+  ],
+  "require": {
+    "php": "^7.2.5 || ^8.0",
+    "phpmailer/phpmailer": "^6.9",
+    "mobiledetect/mobiledetectlib": "^2.8",
+    "ext-json": "*",
+    "ext-pdo": "*",
+    "fzaninotto/faker": "^1.9"
+  },
+  "require-dev": {
+
+  },
+  "suggest": {
+    "ext-openssl": "Enabling the openssl extension allows you to access https URLs for repositories and packages",
+    "ext-zip": "Enabling the zip extension allows you to unzip archives",
+    "ext-zlib": "Allow gzip compression of HTTP requests"
+  },
+  "config": {
+    "platform": {
+      "php": "7.2.5"
+    },
+    "platform-check": false
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-main": "2.7-dev"
+    },
+    "phpstan": {
+      "includes": [
+        "phpstan/rules.neon"
+      ]
+    }
+  },
+  "autoload": {
+    "psr-4": {
+      "Composer\\": "src/Composer/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Composer\\Test\\": "tests/Composer/Test/"
+    }
+  },
+  "bin": [
+    "bin/composer"
+  ],
+  "scripts": {
+    "compile": "@php -dphar.readonly=0 bin/compile",
+    "test": "@php simple-phpunit",
+    "phpstan": "@php vendor/bin/phpstan analyse --configuration=phpstan/config.neon"
+  },
+  "scripts-descriptions": {
+    "compile": "Compile composer.phar",
+    "test": "Run all tests",
+    "phpstan": "Runs PHPStan"
+  },
+  "support": {
+    "issues": "https://github.com/composer/composer/issues",
+    "irc": "ircs://irc.libera.chat:6697/composer",
+    "security": "https://github.com/composer/composer/security/policy"
+  }
+}

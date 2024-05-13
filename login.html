@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration System</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+<div class="container">
+    <form id="loginForm" action="login.php" method="post">
+        <h1>Login</h1>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
+    <p id="loginLabel">New user? <a href="#" onclick="toggleRegister()" class="noaccount">Click here to Sign Up!</a></p>
+    <form id="registerForm" action="register.php" method="post" style="display: none;">
+        <h1>Register</h1>
+        <label for="reg_username">Username:</label>
+        <input type="text" id="reg_username" name="username" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        <label for="reg_password">Password:</label>
+        <input type="password" id="reg_password" name="password" required><br><br>
+        <input type="submit" value="Register">
+    </form>
+    <p id="loginLink" style="display: none;">Already a user? <a href="#" onclick="toggleRegister()" class="haveaccount">Click here to Login!</a></p>
+</div>
+
+<script>
+    function toggleRegister() {
+        var loginForm = document.getElementById("loginForm");
+        var registerForm = document.getElementById("registerForm");
+        var loginLabel = document.getElementById("loginLabel");
+        var loginLink = document.getElementById("loginLink");
+
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            loginLabel.style.display = "block";
+            registerForm.style.display = "none";
+            loginLink.style.display = "none";
+        } else {
+            loginForm.style.display = "none";
+            loginLabel.style.display = "none";
+            registerForm.style.display = "block";
+            loginLink.style.display = "block";
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f8f8; /* Slightly greyish background */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 65%;
+    height: 90%; /* Increase the height of the container */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff; /* White content section */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar {
+    background-color: black;
+    color: #f8f8f8;
+    display: flex;
+    /*justify-content: space-between;*/
+    justify-items: center;
+    align-items: center;
+    padding: 10px 20px;
+
+    box-shadow: 0 2px 40px rgba(0, 0, 0, 0.5); /* Shadow line */
+
+}
+
+.navbar-left {
+    flex: 1;
+    width: 10%
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    /*width: 15%;*/
+}
+
+.logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+}
+.novel-list {
+    width: 30%;
+    padding-right: 20px;
+    border-right: 1px solid #ccc;
+
+
+}
+
+.novel-list h2 {
+    margin-top: 0;
+    text-align: center;
+
+
+}
+
+
+.novel-list ul {
+    padding: 0;
+    margin: 0;
+
+}
+
+.novel-list li {
+    cursor: pointer;
+}
+#novelForm{
+    display: none;
+
+
+}
+
+#titleInput{
+    width: 70%;
+    font-size: 27px;
+}
+#editTitleInput{
+    width: 70%;
+    font-size: 27px;
+}
+
+#contentInput {
+    height: 50%; /* Set the initial height of the content input */
+    min-height: 600px; /* Set a minimum height for the content input */
+    resize: none;
+    font-size: 14px;
+}
+
+#editContentInput {
+    height: 50%; /* Set the initial height of the content input */
+    min-height: 600px; /* Set a minimum height for the content input */
+    resize: none;
+    font-size: 14px;
+}
+
+.create-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #7FFF7F; /* Light green */
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.1);
+}
+.create-btn:hover{
+    background-color: #37fd12;
+}
+
+.novel-details {
+    width: 90%;
+    padding-left: 20px;
+}
+#novelForm{
+    display: none;
+}
+
+.btn-group {
+    margin-top: 20px;
+}
+
+.btn-group button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+#cancelBtn {
+    background-color: #ccc;
+    color: #000;
+}
+
+#deleteBtn {
+    background-color: #f44336; /* Red */
+    color: #fff;
+}
+
+#saveBtn {
+    background-color: #333;
+    color: #fff;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    outline: none;
+    border-color: #333;
+}
+
+.logo-container {
+    pointer-events: none;
+}
+.logo-container img {
+    width: 50px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space to the right of the logo */
+}
+.site-name {
+    font-size: 50px;
+    position: absolute;
+    left: 5%;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px; /* Need a specific value to work */
+    color:  #f8f8f8;
+}
+
+.selectedNovel{
+    display: none;
+    /*display: block;*/
+}
+.novel-list-item {
+    position: relative;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 10px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    list-style-type: none;
+    text-align: center;
+    margin-bottom: 15px;
+    background-color: #fbfcf8;
+
+}
+
+.novel-list-item:hover {
+    background-color: #f8f8f8;
+}
+
+.novel-title {
+    margin: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    padding: 40px;
+
+}
+
+.novel-list-shadow {
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #fbfcf8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.novelContentInspect{
+
+}
+.editNovelBtn{
+
+}
+.editNovelForm {
+    display: none;
+}
+
+.edittitleandbuttons{
+    display: flex;
+    align-items: center;
+}
+.edit-buttons{
+    margin-left: 20px;
+    margin-bottom: 30px ;
+
+}
+.editSaveBtn{
+    background-color: black;
+    color:  white;
+    height: 40px;
+    width: 100px;
+}
+.editSaveBtn:hover{
+    background-color: #333333;
+}
+#editCancelBtn{
+    height: 40px;
+    width: 100px;
+}
+#editCancelBtn:hover{
+    background-color: lightgrey;
+}
+    .createandbuttons{
+    display: flex;
+    align-items: center;
+}
+#saveBtn{
+    background-color: black;
+    color:  white;
+    height: 40px;
+    width: 100px;
+}
+#cancelBtn{
+    height: 40px;
+    width: 100px;
+}
+.publis-buttons{
+    margin-left: 25px;
+    margin-bottom: 30px;
+}
+.selectedNovelandTitle{
+    display: flex;
+    align-items: center;
+}
+.selectedNovelandButtons{
+    margin-right: -20%;
+
+    padding: 20px;
+}
+.selectedNovelOnlyTitle{
+
+}
+
+.editNovelBtn{
+    border-radius: 7px; /* Set the border-radius to half of the button's height for a rounded button */
+    padding: 10px 20px; /* Add padding to make the button more clickable */
+    background-color: #90ee90   ; /* Set a background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer */
+    width: 120px;
+    height: 40px;
+    margin-right: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+.deleteBtn{
+    border-radius: 7px; /* Set the border-radius to half of the button's height for a rounded button */
+    padding: 10px 20px; /* Add padding to make the button more clickable */
+    background-color: #e3242b   ; /* Set a background color */
+    color: white; /* Set text color to white */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add cursor pointer */
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.editNovelBtn:hover{
+    background-color: #4CAF50;
+}
+.deleteBtn:hover{
+    background-color: #f44336;
+}
