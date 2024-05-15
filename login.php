@@ -20,6 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $sql = "SELECT * FROM users WHERE username=?";
     $smt = $conn->prepare($sql);
+
     if($smt){
         $smt->bindParam(1, $username, PDO::PARAM_STR);
         $smt->execute();
@@ -43,6 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 // Send email
                 $mail = new PHPMailer(true);
+
                 try {
                     $mail->isSMTP();
                     $mail->Host = 'smtp.gmail.com';
@@ -63,6 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         . "Country: " . $country;
 
                     $mail->send();
+
                     echo 'Email sent successfully';
                 } catch (Exception $e) {
                     echo 'Email could not be sent.';

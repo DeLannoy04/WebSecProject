@@ -35,12 +35,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $content = $_POST['contentInput'];
     $username = $_SESSION['username']; // Assuming the username is stored in the session
 
-    $sql = "INSERT INTO stories (username, title, content) VALUES (:username, :title, :content)";
-    $smt = $conn->prepare($sql);
-    $smt->bindParam(':username', $username, PDO::PARAM_STR);
-    $smt->bindParam(':title', $title, PDO::PARAM_STR);
-    $smt->bindParam(':content', $content, PDO::PARAM_STR);
-    $smt->execute();
+    try{
+        $sql = "INSERT INTO stories (username, title, content) VALUES (:username, :title, :content)";
+        $smt = $conn->prepare($sql);
+        $smt->bindParam(':username', $username, PDO::PARAM_STR);
+        $smt->bindParam(':title', $title, PDO::PARAM_STR);
+        $smt->bindParam(':content', $content, PDO::PARAM_STR);
+
+        $smt->execute();
+    }
+    catch (PDOException $e){
+        echo $e;
+    }
 
     if ($smt->rowCount() > 0) {
         header("Location: create.php");

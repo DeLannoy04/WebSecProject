@@ -1,5 +1,5 @@
 <?php
-$servername = "oe1.stud.vts.su.ac.rs";
+$servername = "localhost";
 $username = "oe1";
 $password = "WklUmZFB5msQQU5";
 $dbname = "oe1";

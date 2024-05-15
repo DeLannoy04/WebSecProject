@@ -11,6 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
 
+
     // Check if the username already exists
     $checkUsernameSql = "SELECT * FROM users WHERE username=:username";
     $smt = $conn->prepare($checkUsernameSql);
@@ -32,12 +33,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     else {
         // Username is available, proceed with registration
-        $sql = "INSERT INTO users (username, email, password) VALUES (:username, :email, :password)";
+        $sql = "INSERT INTO users (username, email, password, displayName) VALUES (:username, :email, :password, :displayName)";
         $smt = $conn->prepare($sql);
         $smt->bindParam(':username', $username, PDO::PARAM_STR);
         $smt->bindParam(':email', $email, PDO::PARAM_STR);
         $smt->bindParam(':password', $password, PDO::PARAM_STR);
+        $smt->bindParam(':displayName', $username, PDO::PARAM_STR);
         $smt->execute();
+
+
         if ($smt->rowCount() > 0) {
             $_SESSION['username'] = $username;
             header("Location: index.php");

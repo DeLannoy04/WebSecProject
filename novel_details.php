@@ -1,13 +1,13 @@
 <?php
-
 require 'vendor/autoload.php'; // Include PHPMailer autoload file
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+ini_set('display_errors', 1);
+
 session_start();
 require_once "db.php";
-
 $loggedIn = isset($_SESSION['username']);
 
 if (isset($_GET['id'])) {
@@ -37,6 +37,8 @@ if (isset($_GET['id'])) {
         header("Location: browse_novels.php");
     }
 }
+else
+    header("Location: browse_novels.php");
 
 // Handle comment submission
 if (isset($_POST['submit'])) {
